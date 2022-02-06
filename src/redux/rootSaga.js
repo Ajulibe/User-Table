@@ -12,7 +12,7 @@ function* rootSaga() {
             yield call(saga);
             break;
           } catch (e) {
-            console.error(e);
+            return;
           }
         }
       })
