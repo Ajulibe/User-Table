@@ -7,7 +7,7 @@ import * as Yup from "yup";
 import { withFormik } from "formik";
 import { isEmpty } from "lodash";
 import { CustomButton } from "components/Button";
-import { editUser } from "redux/action";
+import { editFn } from "redux/action";
 
 const EditUserSchema = Yup.object().shape({
   Name: Yup.string()
@@ -37,7 +37,7 @@ const formikEnhancer = withFormik({
         email: values?.Email
       }
     };
-    props.dispatch(editUser(editPayload));
+    props.dispatch(editFn(editPayload));
     setSubmitting(false);
     props.navigate("/");
   },

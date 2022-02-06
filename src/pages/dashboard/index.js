@@ -9,7 +9,7 @@ import { useDisclosure, Button } from "@chakra-ui/react";
 import { useToast, Box } from "@chakra-ui/react";
 import EmptyState from "components/EmptyState";
 import { useDispatch } from "react-redux";
-import { deleteUser as deleteAction, sortUsers } from "redux/action";
+import { deleteFn as deleteAction, sortUsers } from "redux/action";
 import COLORS from "styles/colors";
 import { orderBy } from "lodash";
 import { BiSortAlt2 } from "react-icons/bi";
@@ -26,11 +26,11 @@ const Dashboard = () => {
 
   const deleteUser = () => {
     let dataIndex;
-    state.user.find((item, index) => {
+    const userData = state.user.find((item, index) => {
       dataIndex = index;
       return item?.id === dataId.current;
     });
-    dispatch(deleteAction(dataIndex));
+    dispatch(deleteAction({ dataIndex, userData }));
     toast({
       duration: 1000,
       render: () => (
@@ -66,6 +66,7 @@ const Dashboard = () => {
             <span>User list</span>
             <CustomButton variant="primary" message="Add New" link to="new-user" />
           </div>
+
           {state?.status !== "loading" && state?.user?.length === 0 && <EmptyState />}
           {state?.status === "loading" ? (
             <div className="table__spinner-wrapper">

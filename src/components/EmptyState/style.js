@@ -6,18 +6,14 @@ export const EmptyContainer = styled.div`
   align-items: center;
   margin-top: 10%;
   padding-bottom: 2rem;
+  padding-top: 2rem;
+  margin: auto;
   .icon {
     font-size: 4rem;
   }
 
-  @media only screen and (max-width: 312px) {
-    align-items: flex-start;
-    justify-content: flex-start;
-    margin-left: 3.9rem;
-  }
-
   .desc {
-    width: 42.2rem;
+    max-width: 32.2rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -37,8 +33,8 @@ export const EmptyContainer = styled.div`
       font-weight: 300;
       font-size: 1.4rem;
 
-      @media only screen and (max-width: 312px) {
-        text-align: left;
+      @media only screen and (max-width: 350px) {
+        text-align: center;
       }
     }
   }

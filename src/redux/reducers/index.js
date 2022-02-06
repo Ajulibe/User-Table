@@ -39,7 +39,7 @@ export const reducer = createReducer(initialState, {
   },
   //delete a User
   [deleteUser.type]: (state, { payload }) => {
-    state.user.splice(payload, 1);
+    state.user.splice(payload?.dataIndex, 1);
   },
   //sort by Username
   [sortUsers.type]: (state, { payload }) => {

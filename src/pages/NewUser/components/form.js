@@ -7,7 +7,7 @@ import * as Yup from "yup";
 import { withFormik } from "formik";
 import { isEmpty } from "lodash";
 import { CustomButton } from "components/Button";
-import { createUser } from "redux/action";
+import { createFn } from "redux/action";
 
 const NewUserSchema = Yup.object().shape({
   Name: Yup.string()
@@ -33,7 +33,8 @@ const formikEnhancer = withFormik({
         city: faker.address.cityName()
       }
     };
-    props.dispatch(createUser(payload));
+    props.dispatch(createFn(payload));
+    // props.dispatch(createUser(payload));
     setSubmitting(false);
     props.navigate("/");
   },
