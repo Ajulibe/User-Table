@@ -6,6 +6,9 @@ export const FormWrapper = styled.div`
   margin: auto;
   padding-top: 4rem;
   padding-bottom: 4rem;
+  @media only screen and (max-width: 320px) {
+    width: 90%;
+  }
 
   label {
     font-weight: 500;

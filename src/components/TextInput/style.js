@@ -1,6 +1,5 @@
 import styled from "@emotion/styled";
 import { Input } from "@chakra-ui/react";
-import COLORS from "styles/colors";
 
 //TEXT INPUT
 export const TextInputWrapper = styled.div`
@@ -8,14 +7,21 @@ export const TextInputWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-start;
-
+  @media only screen and (max-width: 500px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
   label {
-    font-size: 16px;
+    font-size: 1.6rem;
     margin-right: 4rem;
     width: 50px;
+    @media only screen and (max-width: 500px) {
+      text-align: left;
+    }
   }
   input {
     text-indent: 4px;
+    font-size: 1.6rem;
   }
   .input__wrapper {
     width: 100%;

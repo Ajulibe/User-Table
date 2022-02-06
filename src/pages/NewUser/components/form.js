@@ -1,6 +1,5 @@
 import React from "react";
 import { Spacer } from "@chakra-ui/react";
-import COLORS from "styles/colors";
 import { faker } from "@faker-js/faker";
 import { FormWrapper, ButtonWrapper } from "./style";
 import { TextInput } from "components/TextInput";
@@ -24,7 +23,7 @@ const formikEnhancer = withFormik({
     Email: ""
   }),
   handleSubmit: (values, { setSubmitting, props }) => {
-    const id = props.state.length + 1;
+    const id = props.initialLength + 1;
     const payload = {
       id,
       name: values?.Name,
@@ -44,17 +43,8 @@ const formikEnhancer = withFormik({
 });
 
 const FormCmp = (props) => {
-  const {
-    values,
-    touched,
-    errors,
-    handleSubmit,
-    handleChange,
-    handleBlur,
-    isValid,
-    isSubmitting,
-    state
-  } = props;
+  const { values, touched, errors, handleSubmit, handleChange, handleBlur, isValid, isSubmitting } =
+    props;
 
   return (
     <FormWrapper>

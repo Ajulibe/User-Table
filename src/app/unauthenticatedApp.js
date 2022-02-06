@@ -13,6 +13,7 @@ const UnauthenticatedApp = () => {
   //fetch user List
   useEffect(() => {
     dispatch(getUser());
+    // eslint-disable-next-line
   }, []);
 
   return (

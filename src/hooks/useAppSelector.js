@@ -7,10 +7,10 @@ import { useSelector } from "react-redux";
  */
 
 function useAppSelector(fn) {
- const selector = useSelector(fn);
- if (selector === undefined) {
-  throw new Error("useAppSelector must be used within a Provider");
- }
- return selector;
+  const selector = useSelector(fn);
+  if (selector === undefined) {
+    throw new Error("useAppSelector must be used within a Provider");
+  }
+  return selector;
 }
 export { useAppSelector };

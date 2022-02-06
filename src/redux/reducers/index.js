@@ -11,13 +11,15 @@ import { createReducer } from "@reduxjs/toolkit";
 
 const initialState = {
   user: [],
-  status: "loading"
+  status: "loading",
+  initialLength: 0
 };
 
 export const reducer = createReducer(initialState, {
   [getUserSuccess.type]: (state, action) => {
     state.user = action.payload;
     state.status = "success";
+    state.initialLength = action.payload.length;
   },
   [getUserError.type]: (state, action) => {
     state.user = action.payload;
@@ -29,6 +31,7 @@ export const reducer = createReducer(initialState, {
   //Add a New User
   [createUser.type]: (state, { payload }) => {
     state.user.push(payload);
+    state.initialLength = payload.id;
   },
   //Edit a User
   [editUser.type]: (state, { payload }) => {

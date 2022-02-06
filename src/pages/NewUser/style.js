@@ -5,14 +5,15 @@ export const Container = styled.div`
   width: 100%;
   height: 100%;
   padding: 4rem;
+  @media only screen and (max-width: 320px) {
+    padding: 2rem;
+  }
   header {
     font-size: 4.4rem;
     font-weight: bold;
     text-align: left;
   }
-  tr {
-    border: 1px solid red;
-  }
+
   th {
     font-size: 1.6rem;
   }

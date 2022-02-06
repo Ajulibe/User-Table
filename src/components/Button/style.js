@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 import styled from "@emotion/styled";
 import { css } from "@emotion/react";
 import COLORS from "styles/colors";
@@ -18,6 +19,7 @@ export const ButttonContainer = styled.div`
       ghost === "primary" &&
       css`
         color: ${COLORS.primary};
+
         border: 1px solid ${COLORS.primary};
         background-color: ${COLORS.white};
       `}
@@ -53,6 +55,7 @@ export const ButttonContainer = styled.div`
       variant === "primary" &&
       css`
         background-color: ${COLORS.primary};
+        border: 1px solid ${COLORS.primary};
       `}
       ${({ variant }) =>
       variant === "warning" &&

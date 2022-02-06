@@ -4,6 +4,11 @@ import COLORS from "styles/colors";
 export const Container = styled.div`
   width: 100%;
   padding: 4rem;
+  @media only screen and (max-width: 320px) {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2rem;
+  }
   header {
     font-size: 4.4rem;
     font-weight: bold;
@@ -35,7 +40,7 @@ export const Container = styled.div`
     overflow: auto;
   }
   .table__spinner-wrapper {
-    height: 70vh;
+    max-height: 70vh;
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -44,5 +49,17 @@ export const Container = styled.div`
   .filter__btn {
     margin-left: 10px;
     font-size: 16px;
+  }
+  .css-1zts0j {
+    text-transform: none;
+    font-weight: 500;
+  }
+  .css-xumdn4 {
+    line-height: 24px;
+  }
+  .sort__icon {
+    @media only screen and (max-width: 768px) {
+      font-size: 10px;
+    }
   }
 `;

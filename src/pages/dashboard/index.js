@@ -11,7 +11,7 @@ import EmptyState from "components/EmptyState";
 import { useDispatch } from "react-redux";
 import { deleteUser as deleteAction, sortUsers } from "redux/action";
 import COLORS from "styles/colors";
-import _ from "lodash";
+import { orderBy } from "lodash";
 import { BiSortAlt2 } from "react-icons/bi";
 import { Menu, MenuButton, MenuList, MenuItem } from "@chakra-ui/react";
 
@@ -48,12 +48,11 @@ const Dashboard = () => {
   };
 
   const openModal = (id) => {
-    console.log(id, "id");
     dataId.current = id;
     onOpen();
   };
   const sortUserName = (direction) => {
-    const newState = _.orderBy(state.user, ["username"], [direction]);
+    const newState = orderBy(state.user, ["username"], [direction]);
     dispatch(sortUsers(newState));
   };
 
@@ -90,7 +89,7 @@ const Dashboard = () => {
                         Username
                         <Menu>
                           <MenuButton as={Button} className="filter__btn">
-                            <BiSortAlt2 />
+                            <BiSortAlt2 className="sort__icon" />
                           </MenuButton>
                           <MenuList>
                             <MenuItem

@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 const NewUser = React.memo(() => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const state = useAppSelector((state) => state.user);
+  const { user: state, initialLength } = useAppSelector((state) => state);
 
   return (
     <Container>
@@ -17,7 +17,12 @@ const NewUser = React.memo(() => {
         <div className="table__header">
           <span>Add New User</span>
         </div>
-        <NewUserForm dispatch={dispatch} navigate={navigate} state={state} />
+        <NewUserForm
+          dispatch={dispatch}
+          navigate={navigate}
+          state={state}
+          initialLength={initialLength}
+        />
       </div>
     </Container>
   );
