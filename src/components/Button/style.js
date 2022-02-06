@@ -79,7 +79,8 @@ export const ButttonContainer = styled.div`
       `}
   }
   a {
+    font-size: 1.6rem;
+    padding: 0.95rem 3rem;
     font-weight: bold;
-    padding: 1.2rem 3rem;
   }
 `;
